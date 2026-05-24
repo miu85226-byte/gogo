@@ -1,0 +1,131 @@
+/* 전체 폰트 및 배경 */
+body {
+    font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.app-header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-header h1 { margin: 0; font-size: 1.8rem; }
+.app-header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem; }
+
+#connection-status {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.status-online { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid #2ecc71; }
+.status-offline { background-color: rgba(231, 76, 60, 0.2); color: #e74c3c; border: 1px solid #e74c3c; }
+
+/* 달력 컨테이너 */
+#calendar-container {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* 모달(팝업) 배경 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+}
+
+/* 모달 콘텐츠 박스 */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover { color: #333; }
+
+/* 입력 양식 디자인 */
+.input-group { margin-bottom: 15px; }
+.row { display: flex; gap: 15px; }
+.row .input-group { flex: 1; }
+
+label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; font-size: 0.9rem; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+}
+
+/* 버튼 디자인 */
+.btn-group { margin-top: 25px; display: flex; gap: 10px; }
+.btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: filter 0.2s;
+}
+
+.btn:active { transform: scale(0.98); }
+.primary { background-color: #2ecc71; }
+.danger { background-color: #e74c3c; }
+.btn:hover { filter: brightness(90%); }
+
+/* 모바일 화면 대응 */
+@media (max-width: 600px) {
+    #calendar-container { margin: 10px; padding: 10px; }
+    .app-header h1 { font-size: 1.4rem; }
+    .modal-content { margin: 10% auto; padding: 20px; }
+    .row { flex-direction: column; gap: 0; }
+    .fc-header-toolbar { font-size: 0.8rem; flex-direction: column; gap: 10px; }
+}

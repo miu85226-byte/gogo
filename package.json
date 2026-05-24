@@ -1,0 +1,17 @@
+{
+  "name": "treecreeper-app",
+  "version": "1.0.0",
+  "description": "A project for treecreeper",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "node --watch api/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
+  }
+}
