@@ -75,6 +75,11 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: '안녕하세요! 나무발발이 서버입니다.' });
 });
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`서버 실행 중: http://localhost:${port}`);
-});
+// 서버 실행 (로컬 테스트용)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, '0.0.0.0', () => {
+        console.log(`서버 실행 중: http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
